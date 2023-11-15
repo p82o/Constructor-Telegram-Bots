@@ -28,13 +28,13 @@ CONSTRUCTOR_TELEGRAM_BOT_API_TOKEN: str | None = os.getenv('TELEGRAM_BOT_TOKEN')
 CONSTRUCTOR_TELEGRAM_BOT_USERNAME: str | None = os.getenv('TELEGRAM_BOT_USERNAME')
 
 
-SITE_DOMAIN = 'http://127.0.0.1:8000' if DEBUG else 'https://constructor.exg1o.org'
-ALLOWED_HOSTS = ['127.0.0.1', 'constructor.exg1o.org']
+SITE_DOMAIN = 'http://127.0.0.1:8000' if DEBUG else 'https://80.90.191.153'
+ALLOWED_HOSTS = ['127.0.0.1', '80.90.191.153']
 CSRF_TRUSTED_ORIGINS = [
 	'http://*.127.0.0.1',
 	'https://*.127.0.0.1',
-	'http://constructor.exg1o.org',
-	'https://constructor.exg1o.org',
+	'http://80.90.191.153',
+	'https://80.90.191.153',
 ]
 
 
@@ -160,7 +160,7 @@ DATABASES = {
 		'NAME': os.getenv('POSTGRESQL_DATABASE_NAME'),
 		'USER': os.getenv('POSTGRESQL_DATABASE_USER'),
 		'PASSWORD': os.getenv('POSTGRESQL_DATABASE_PASSWORD'),
-		'HOST': '127.0.0.1', 
+		'HOST': '127.0.0.1',
 		'PORT': '5432',
 	},
 }
@@ -213,7 +213,7 @@ LOGGING = {
 			'class': 'logging.StreamHandler',
 			'formatter': 'simple',
 		},
-		'django_info_file': { 
+		'django_info_file': {
 			'level': 'DEBUG',
 			'class': 'logging.handlers.RotatingFileHandler',
 			'filename': BASE_DIR / 'logs/django_info.log',
@@ -221,7 +221,7 @@ LOGGING = {
 			'backupCount': 10,
 			'formatter': 'verbose',
 		},
-		'django_error_file': { 
+		'django_error_file': {
 			'level': 'WARNING',
 			'class': 'logging.handlers.RotatingFileHandler',
 			'filename': BASE_DIR / 'logs/django_error.log',
